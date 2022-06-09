@@ -19,6 +19,10 @@ import com.gzeinnumer.da.dialog.confirmDialog.ConfirmDialog;
 
 public class MainActivity extends AppCompatActivity {
 
+    //asyntask
+    //workmanager
+    //broadcasr BroadcastReceiver
+
     //todo 2
     private BroadcastReceiver timeTikBroadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -44,7 +48,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //todo 2.1
         startService(new Intent(this, TimerService.class));
+
+        binding.btnTrigger.setOnClickListener(view -> {
+            startService(new Intent(this, TimerService.class));
+        });
     }
 
     //todo 3
