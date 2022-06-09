@@ -7,6 +7,7 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
+//todo 1 buat class TimerService
 public class TimerService extends Service {
 
     public static final String BROADCAST_TIME_TIK_ACTION
@@ -21,7 +22,7 @@ public class TimerService extends Service {
     public void onCreate() {
         super.onCreate();
         intentTimeTik = new Intent(BROADCAST_TIME_TIK_ACTION);
-        countDownTimer = new CountDownTimer(10000, 1000) {
+        countDownTimer = new CountDownTimer(2000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 long time = millisUntilFinished / 1000;
